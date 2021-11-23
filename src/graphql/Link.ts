@@ -1,5 +1,5 @@
 import { extendType, nonNull, objectType, stringArg } from "nexus";
-import { NexusGenObjects } from "../../nexus-typegen"; 
+import { NexusGenObjects } from "../../nexus-typegen";
 
 export const Link = objectType({
     name: "Link",
@@ -8,10 +8,8 @@ export const Link = objectType({
         t.nonNull.string("description");
         t.nonNull.string("url");
         t.field("postedBy", {
-            
             type: "User",
             resolve(parent, args, context) {
-                
                 return context.prisma.link
                     .findUnique({ where: { id: parent.id } })
                     .postedBy();
@@ -26,7 +24,6 @@ export const LinkQuery = extendType({
         t.nonNull.list.nonNull.field("feed", {
             type: "Link",
             resolve(parent, args, context) {
-                
                 return context.prisma.link.findMany();
             },
         });
@@ -42,11 +39,11 @@ export const LinkMutation = extendType({
                 description: nonNull(stringArg()),
                 url: nonNull(stringArg()),
             },
-            resolve(parent, args, context) {   
+            resolve(parent, args, context) {
                 const { description, url } = args;
                 const { userId } = context;
 
-                if (!userId) {  
+                if (!userId) {
                     throw new Error("Cannot post without logging in.");
                 }
 
@@ -54,7 +51,7 @@ export const LinkMutation = extendType({
                     data: {
                         description,
                         url,
-                        postedBy: { connect: { id: userId } },  
+                        postedBy: { connect: { id: userId } },
                     },
                 });
 
