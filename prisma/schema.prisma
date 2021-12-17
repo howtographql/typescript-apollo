@@ -12,14 +12,16 @@ model Link {
   createdAt   DateTime @default(now())
   description String
   url         String
-  postedBy    User?    @relation(fields: [postedById], references: [id])
+  postedBy    User?    @relation(name: "foobar", fields: [postedById], references: [id])
   postedById  Int?
+  voters      User[]   @relation(name: "Votes")
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  name      String
-  email     String   @unique
-  password  String
-  links     Link[]
+  id       Int    @id @default(autoincrement())
+  name     String
+  email    String @unique
+  password String
+  links    Link[] @relation(name: "foobar")
+  votes    Link[] @relation(name: "Votes")
 }
