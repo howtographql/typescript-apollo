@@ -14,6 +14,11 @@
       "schedule": ["every weekend"]
     },
     {
+      "matchDepTypes": ["devDependencies, dependencies"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    },
+    {
       "matchDepTypes": ["dependencies"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "dependencies",
