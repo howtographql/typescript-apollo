@@ -1,6 +1,7 @@
 # typescript-apollo
 Tutorial for HowToGraphQL with Typescript, Apollo-Server, Nexus and Prisma.
 
+This is the state of the project at the beginning of [chapter-9](https://www.howtographql.com/typescript-apollo/9-deployment/).
 
 ### Installation
 
