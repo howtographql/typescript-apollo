@@ -14,3 +14,4 @@ Tutorial for HowToGraphQL with Typescript, Apollo-Server, Nexus and Prisma.
 6. Access the project at http://localhost:3000/
 
 
+**Note:** The state of the codebase at the beginning of [chapter-9](https://www.howtographql.com/typescript-apollo/9-deployment/) is available in the [`chapter-9-start`](https://github.com/howtographql/typescript-apollo/tree/chapter-9-start) branch.
