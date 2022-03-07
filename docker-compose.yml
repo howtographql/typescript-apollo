@@ -1,14 +1,14 @@
 version: '3.8'
 services:
 
-  # Docker connection string for local machine: postgres://prisma:prisma@localhost:5432/
+  # Docker connection string for local machine: postgres://postgres:postgres@localhost:5432/
 
   postgres:
     image: postgres:13.5   
     restart: always
     environment:            
-      - POSTGRES_USER=prisma
-      - POSTGRES_PASSWORD=prisma
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
     volumes:                
       - postgres:/var/lib/postgresql/data
     ports:
