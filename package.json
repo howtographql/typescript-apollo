@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node-dev --transpile-only --no-notify --exit-child src/index.ts",
     "generate": "ts-node --transpile-only src/schema",
-    "prettier-format": "prettier 'src/**/*.ts' --write"
+    "prettier-format": "prettier 'src/**/*.ts' --write",
+        "migrate:deploy": "prisma migrate deploy",
+    "build": "prisma generate && npm run generate && tsc",
+    "start": "node dist/src/index.js"
   },
   "keywords": [],
   "author": "",
