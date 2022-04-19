@@ -56,6 +56,7 @@ export interface NexusGenObjects {
   }
   Feed: { // root type
     count: number; // Int!
+    id?: string | null; // ID
     links: NexusGenRootTypes['Link'][]; // [Link!]!
   }
   Link: { // root type
@@ -94,6 +95,7 @@ export interface NexusGenFieldTypes {
   }
   Feed: { // field return type
     count: number; // Int!
+    id: string | null; // ID
     links: NexusGenRootTypes['Link'][]; // [Link!]!
   }
   Link: { // field return type
@@ -133,6 +135,7 @@ export interface NexusGenFieldTypeNames {
   }
   Feed: { // field return type name
     count: 'Int'
+    id: 'ID'
     links: 'Link'
   }
   Link: { // field return type name

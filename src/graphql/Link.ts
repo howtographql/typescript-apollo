@@ -42,6 +42,7 @@ export const Feed = objectType({
     definition(t) {
         t.nonNull.list.nonNull.field("links", { type: Link });
         t.nonNull.int("count");
+        t.id("id");
     },
 });
 
@@ -89,10 +90,12 @@ export const LinkQuery = extendType({
                 });
 
                 const count = await context.prisma.link.count({ where });
-
+                const id = `main-feed:${JSON.stringify(args)}`;   
+                  
                 return {
                     links,
                     count,
+                    id,
                 };
             },
         });
